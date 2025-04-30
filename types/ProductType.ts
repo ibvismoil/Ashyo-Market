@@ -1,4 +1,4 @@
-import { HeaderCategoriesType } from "./HeaderButtomType";
+import { HeaderBottomType } from "./HeaderButtomType";
 
 export interface ProductType {
     id: number;
@@ -17,6 +17,6 @@ export interface ProductType {
     updatedAt: string;
     comments: any;
     like: any;
-    category: HeaderCategoriesType;
+    category: HeaderBottomType;
     product_item: any;
 }
