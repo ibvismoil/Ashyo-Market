@@ -1,0 +1,16 @@
+
+.products> .swiper> .swiper-wrapper> .swiper-slide{
+    width: 273px !important;
+    display: flex;
+    flex-direction: column;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    cursor: pointer;
+}
+.products> .swiper> .swiper-wrapper> .swiper-slide> .product-img-wrapper{
+    overflow: hidden;
+}
+.products> .swiper> .swiper-wrapper> .swiper-slide> .product-img-wrapper > img{
+    transition: all 0.3s;
+}
+

@@ -1,0 +1,12 @@
+{
+    "HeaderTopContent": {
+        "location":"Ташкент",
+        "about":"O нас",
+        "products":"Продукты",
+        "contact":"Контакты"
+    },
+    "HeaderCenterContent":{
+        "category":"Категория",
+        "placeholder":"Искать товары и категории"
+    }
+}

@@ -1,0 +1,12 @@
+{
+    "HeaderTopContent": {
+        "location": "Tashkent",
+        "about": "About us",
+        "products": "Products",
+        "contact": "Contacts"
+    },
+    "HeaderCenterContent": {
+        "category": "Kategorya",
+        "placeholder": "What are you looking for?"
+    }
+}
