@@ -1,11 +1,11 @@
 "use client"
-import { Context } from '@/context/Context'
-import { API, IMG_API } from '@/hooks/getEnv'
+import Image from 'next/image'
 import { Link } from '@/i18n/navigation'
+import React, { useContext } from 'react'
+import { Context } from '@/context/Context'
+import { IMG_API } from '@/hooks/getEnv'
 import { getCategories } from '@/service/getCategories'
 import { HeaderBottomType } from '@/types/HeaderButtomType'
-import Image from 'next/image'
-import React, { useContext } from 'react'
 
 const HeaderPopapCategory = () => {
   const { showCategory } = useContext(Context)

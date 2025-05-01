@@ -6,6 +6,7 @@
     padding-top: 0 !important;
     padding-bottom: 0 !important;
     cursor: pointer;
+    position: relative;
 }
 .products> .swiper> .swiper-wrapper> .swiper-slide> .product-img-wrapper{
     overflow: hidden;

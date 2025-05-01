@@ -8,5 +8,14 @@
     "HeaderCenterContent": {
         "category": "Kategorya",
         "placeholder": "What are you looking for?"
+    },
+    "ProductsLang": {
+        "title":"Most popular product",
+        "akciya":"Promotional goods",
+        "history":"Recently viewed products"
+    },
+    "AirBase": {
+        "title":"You don't have to spend a lot of money to enjoy music!",
+        "button":"More details"
     }
 }

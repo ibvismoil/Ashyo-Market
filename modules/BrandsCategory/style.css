@@ -46,17 +46,4 @@
   .item-6 { background-color: #CEAF75; grid-area: f; }
   .item-7 { background-color: #DFDFDF; grid-area: g; }
 
-  .brand-category-wrapper::after {
-    content: "Ko‘proq";
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: #134E9B;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 6px;
-    font-weight: 600;
-    cursor: pointer;
-    z-index: 3;
-  }
   

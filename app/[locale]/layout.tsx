@@ -5,6 +5,7 @@ import { QueryProvider } from '@/query/QueryClientProvider';
 import "./globals.css";
 import { LangContext } from '@/context/Context';
 import Layout from '@/features';
+import { Toaster } from 'sonner';
 
 export default async function LocaleLayout({
   children,
@@ -28,6 +29,7 @@ export default async function LocaleLayout({
         <NextIntlClientProvider>
           <QueryProvider>
             <LangContext>
+            <Toaster position="top-center" />
               <Layout>{children}</Layout>
             </LangContext>
           </QueryProvider>

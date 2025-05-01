@@ -15,7 +15,7 @@ const BrandCategory = () => {
             {categories.map((item: HeaderBottomType, index: number) => (
         <div key={item.id} className={`brand-category-item item-${index + 1}`}>
       <span className="category-title">{item.name}</span>
-      <Image className="category-image" src={`${IMG_API}/${item.image}`} alt="Category img" width={343} height={254} priority/>
+      <Image className="category-image object-contain" src={`${IMG_API}/${item.image}`} alt="Category img" width={343} height={254} priority/>
         </div>
       ))}
     </div>

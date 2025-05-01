@@ -8,5 +8,14 @@
     "HeaderCenterContent":{
         "category":"Kategoriya",
         "placeholder":"Nimani qidiryapsiz?"
+    },
+    "ProductsLang": {
+        "title":"Eng mashhur mahsulot",
+        "akciya":"Aksiyadagi tovarlar",
+        "history":"Oxirgi ko’rgan mahsulotlar"
+    },
+    "AirBase": {
+        "title":"Musiqa zavqini his qilish uchun ko'p mablag' sarflash shart emas!",
+        "button":"Batafsil"
     }
 }

@@ -22,7 +22,7 @@ const Hero = () => {
         <Swiper pagination={{ clickable: true }} autoplay={{ delay: 5000, disableOnInteraction: false, }} effect="fade" fadeEffect={{ crossFade: true }} modules={[Pagination, Autoplay, EffectFade]} className="mySwiper" >
           {banners.map((item: BannersType, index: number) => (
             <SwiperSlide key={item.id}>
-              <div className="relative bg-[#F3F0F0] flex flex-col md:flex-row items-center justify-between h-[450px]">
+              <div className="relative bg-[#F3F0F0] flex flex-col md:flex-row gap-[15px] items-center justify-between h-[450px]">
                 <div className="max-w-xl text-center md:text-left">
                   <h2 className="text-4xl md:text-5xl font-extrabold leading-tight mb-6 text-[#1A1D29]">
                     {item.name}

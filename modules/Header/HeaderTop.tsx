@@ -11,8 +11,7 @@ function HeaderTop() {
     const t = useTranslations('HeaderTopContent')
     const router = useRouter()
     const pathname = usePathname()
-
-    const [lang, setLang] = useState<'uz' | 'ru' | 'en'>('uz')
+    const [lang, setLang] = useState<'uz' | 'ru' | 'en'>('ru')
 
     const changeLang = (value: string) => {
         setLang(value as 'uz' | 'ru' | 'en')
@@ -28,7 +27,7 @@ function HeaderTop() {
     }, [])
 
     return (
-        <div className="bg-[#EBEFF3] py-[11px]">
+        <div className="hidden sm:block bg-[#EBEFF3] py-[11px]">
             <div className="containers flex items-center justify-between">
                 <nav className="flex items-center gap-7">
                     <Link href="/location" className="flex items-center gap-[13px] text-sm font-normal leading-[130%] text-[#545D6A] hover:text-[#134E9B]">
@@ -51,7 +50,7 @@ function HeaderTop() {
                     </Link>
                     <Select onValueChange={changeLang} value={lang}>
                         <SelectTrigger className="w-[70px] flex items-center border-none justify-between text-[#545D6A] text-sm">
-                            <SelectValue defaultValue={lang} />
+                            <SelectValue defaultValue={pathname} />
                         </SelectTrigger>
                         <SelectContent>
                             <SelectGroup className='rounded-[5px] bg-[#ffffff]'>

@@ -1,20 +1,24 @@
-import Products from "@/components/Products/Products";
-import BrandCategory from "@/modules/BrandsCategory";
-import Brands from "@/modules/Brands/index";
-import Header from "@/modules/Header";
 import Hero from "@/modules/Hero";
+import { useTranslations } from "next-intl";
+import Brands from "@/modules/Brands/index";
+import AirSection from "@/modules/AirSection";
+import BrandCategory from "@/modules/BrandsCategory";
+import Products from "@/components/Products/Products";
 
 export default function Home() {
+      const t = useTranslations('ProductsLang')
+  
   return (
     <>     
       <Hero/>
       <Brands/>
-      <Products api="/products" title="Most popular product"/>
-      <Products api="/products" title="Product"/>
-      <Products api="/products" title="Sale product"/>
+      <Products api="/products" title={t('title')}/>
+      <Products api="/products" title={t('title')}/>
+      <Products api="/products" title={t('title')}/>
       <BrandCategory/>
-      <Products api="/products" title="Aksiyadagi tovarlar"/>
-      <Products api="/products" title="Oxirgi ko’rgan mahsulotlar"/>
+      <Products api="/products" title={t('akciya')}/>
+      <AirSection/>
+      <Products api="/products" title={t('history')}/>
     </>
   );
 }
