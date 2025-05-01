@@ -1,6 +1,6 @@
 import { instance } from "@/hooks/instance"
 import { useMutation } from "@tanstack/react-query"
-import Cookies from "js-cookie"
+import { setCookie } from "cookies-next"
 
 interface LoginType {
   email: string
@@ -13,16 +13,14 @@ interface RegisterType {
   password: string
 }
 
-
 export const Login = () => {
   return useMutation({
     mutationFn: async (data: LoginType) => {
       const res = await instance().post("auth/login", data)
       const { accessToken, refreshToken } = res.data
 
-
-      Cookies.set("accessToken", accessToken, { expires: 7 }) 
-      Cookies.set("refreshToken", refreshToken, { expires: 30 }) 
+      setCookie("accessToken", accessToken, { maxAge: 60 * 60 * 24 * 7 }) 
+      setCookie("refreshToken", refreshToken, { maxAge: 60 * 60 * 24 * 30 })
 
       return res.data
     },
