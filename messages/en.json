@@ -17,5 +17,21 @@
     "AirBase": {
         "title":"You don't have to spend a lot of money to enjoy music!",
         "button":"More details"
-    }
+    },
+    "Products": {
+        "akciys":"Sale"
+    },
+        "AboutUs": {
+          "about": "About Ashyo",
+          "installment": "Installment plan",
+          "payment": "Payment methods",
+          "delivery": "Delivery",
+          "warranty": "Warranty",
+          "help": "Help",
+          "paragraph1": "Ashyo is a household electronics and appliance store chain offering affordable prices. In just 2 months, it has offered customers a wide product range, warranty, and support services.",
+          "paragraph2": "Ashyo was established in Tashkent in 2022. Today, the company operates 26 stores in the capital and regions.",
+          "paragraph3": "You can purchase products easily either in-store or online. Installment plans are available with just a passport for registration.",
+          "paragraph4": "Legal entities can make purchases via bank transfer without any extra charges."
+        }
+            
 }

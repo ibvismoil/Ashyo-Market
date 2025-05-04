@@ -6,7 +6,7 @@ import { HeaderBottomType } from '@/types/HeaderButtomType';
 
 const HeaderBottom = () => {
   const {data:categories, isLoading, isError} = getCategories();
-  // console.log(categories)
+  console.log(categories)
 
   return (
 <div className="flex items-center justify-between containers gap-5">

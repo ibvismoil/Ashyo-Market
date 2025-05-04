@@ -1,9 +1,9 @@
 "use client"
 import Image from 'next/image'
+import { IMG_API } from '@/hooks/getEnv'
 import { Link } from '@/i18n/navigation'
 import React, { useContext } from 'react'
 import { Context } from '@/context/Context'
-import { IMG_API } from '@/hooks/getEnv'
 import { getCategories } from '@/service/getCategories'
 import { HeaderBottomType } from '@/types/HeaderButtomType'
 

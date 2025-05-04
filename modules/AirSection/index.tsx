@@ -1,7 +1,7 @@
+import React from 'react'
+import Image from 'next/image'
 import Button from '@/components/Button'
 import { useTranslations } from 'next-intl'
-import Image from 'next/image'
-import React from 'react'
 
 const Naushnik = () => {
     const t = useTranslations('AirBase')

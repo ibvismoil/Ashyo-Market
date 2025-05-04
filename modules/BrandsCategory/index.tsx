@@ -1,10 +1,10 @@
 "use client"
+import "./style.css"
+import React from 'react'
+import Image from 'next/image'
 import { IMG_API } from '@/hooks/getEnv'
 import { getCategories } from '@/service/getCategories'
 import { HeaderBottomType } from '@/types/HeaderButtomType'
-import Image from 'next/image'
-import React from 'react'
-import "./style.css"
 
 const BrandCategory = () => {
     const { data: categories } = getCategories()

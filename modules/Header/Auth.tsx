@@ -1,14 +1,12 @@
 "use client"
-import { Button } from "@/components/ui/button"
-import {
-  Card, CardContent, CardFooter, CardHeader, CardTitle,
-} from "@/components/ui/card"
+import { toast } from "sonner"
+import { FormEvent } from "react"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { Button } from "@/components/ui/button"
 import { Login, Register } from "@/service/Auth"
-import { FormEvent } from "react"
-import { toast } from "sonner"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 
 export function Auth({ onClose }: { onClose: () => void }) {
   const login = Login()
@@ -25,7 +23,7 @@ export function Auth({ onClose }: { onClose: () => void }) {
     login.mutate(data, {
       onSuccess: () => {
         toast.success("Login successful!")
-        onClose() // Закрыть модалку
+        onClose()
       },
       onError: () => {
         toast.error("Login failed. Check your credentials.")
@@ -75,7 +73,7 @@ export function Auth({ onClose }: { onClose: () => void }) {
                 <Input name="password" type="password" placeholder="******" />
               </div>
             </CardContent>
-            <CardFooter>
+            <CardFooter className="mb-3">
               <Button type="submit" className="bg-black text-white">Login</Button>
             </CardFooter>
           </form>

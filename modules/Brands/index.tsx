@@ -1,10 +1,10 @@
 "use client"
-import React from 'react'
-import { getBrands } from '@/service/getBrands'
-import Image from 'next/image'
-import { BrandsType } from '@/types/BrandsType'
-import { IMG_API } from '@/hooks/getEnv'
 import "./style.css"
+import React from 'react'
+import Image from 'next/image'
+import { IMG_API } from '@/hooks/getEnv'
+import { getBrands } from '@/service/getBrands'
+import { BrandsType } from '@/types/BrandsType'
 
 const Brands = () => {
   const { data: brands } = getBrands()

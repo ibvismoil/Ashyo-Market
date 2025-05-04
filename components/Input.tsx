@@ -1,5 +1,5 @@
-import { InputType } from '@/types/InputType'
 import React, { FC } from 'react'
+import { InputType } from '@/types/InputType'
 
 const Input:FC<InputType> = ({placeholder, extraStyle, type, onChange, value}) => {
   return (

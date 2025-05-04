@@ -17,5 +17,21 @@
     "AirBase": {
         "title":"Musiqa zavqini his qilish uchun ko'p mablag' sarflash shart emas!",
         "button":"Batafsil"
-    }
+    },
+    "Products": {
+        "akciys":"Aksiya"
+    },
+
+    "AboutUs": {
+        "about": "Ashyo haqida",
+          "installment": "Muddatli to'lov",
+          "payment": "To'lov usullari",
+          "delivery": "Yetkazib berish",
+          "warranty": "Tovarlar kafolati",
+          "help": "Yordam",
+          "paragraph1": "Ashyo - bozor narhid maishy texnika va electronics dukonlari qurilmalari. 2 oydan davomid mizhozlarga keng assortimentdagi mahsulotlarni, kafolatli va benson hizmatni taklif etib keladi.",
+          "paragraph2": "Ashyo 2022 yilda Toshkent shahrida tashkil etilgan. Bugungi kunga qadar jami poytaxtda va viloyatlarda 26 ta do‘kon faoliyat ko‘rsatmoqda.",
+          "paragraph3": "Siz tovarlarni har qanday qulay usulda sotib olishingiz mumkin: tarmoq do‘konlarida yoki website. Maishiy texnikasi onlayn bo‘lib to‘lov rezhashi mavjud. Ro‘yxatdan o‘tish uchun zarur bo‘lgan hujjat – bu pasport.",
+          "paragraph4": "Yuridik shaxslar uchun pul o‘tkazish yo‘li bilan, eng muhim – qo‘shimcha to‘lovlarsiz sotib olish mumkin."
+        }      
 }

@@ -11,6 +11,8 @@ import { getProducts } from '@/service/getPraducts';
 
 const Products: FC<{ title: string, api: string }> = ({ title, api }) => {
   const { data: products, isLoading } = getProducts(api)
+  console.log(products);
+  
 
   return (
     <div className="products pb-[80px] ">

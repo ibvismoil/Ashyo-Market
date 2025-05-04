@@ -34,7 +34,7 @@ function HeaderTop() {
                         <LocationIcon />
                         <span>{t('location')}</span>
                     </Link>
-                    <Link href="/about" className="text-sm font-normal leading-[130%] text-[#545D6A] hover:text-[#134E9B]">
+                    <Link href="/pages/aboutus" className="text-sm font-normal leading-[130%] text-[#545D6A] hover:text-[#134E9B]">
                         {t('about')}
                     </Link>
                     <Link href="/products" className="text-sm font-normal leading-[130%] text-[#545D6A] hover:text-[#134E9B]">
