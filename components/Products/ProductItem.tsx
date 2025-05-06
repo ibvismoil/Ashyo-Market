@@ -16,7 +16,7 @@ const ProductItem: FC<{ item: ProductType }> = ({ item }) => {
     const monthlyPayment = Math.ceil(item.price / 12)
 
     function handlClick(){
-        router.push(`/${item.id}`)
+        router.push(`/product_details/${item.id}`)
         queryClient.invalidateQueries({queryKey:['single_page']})
     }
  return (

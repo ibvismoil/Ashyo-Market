@@ -27,7 +27,7 @@ const SinglePage = () => {
             <span>Bosh sahifa</span>
             <span>/</span>
           </Link>
-          <Link className='text-[15px] text-[#B6BABF] gap-[15px] flex' href={"/"}>
+          <Link className='text-[15px] text-[#B6BABF] gap-[15px] flex' href={`/pages/products?category=${singleProduct?.category?.id}`}>
             <span>{singleProduct?.category?.name}</span>
             <span>/</span>
           </Link>
