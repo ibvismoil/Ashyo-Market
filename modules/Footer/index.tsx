@@ -1,4 +1,4 @@
-import { FaceBookIcon, YouTubeIcon } from '@/assets/icons'
+import { FaceBookIcon, InstagramIcon, TelegramIcon, TwitterIcon, YouTubeIcon } from '@/assets/icons'
 import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 import React from 'react'
@@ -11,13 +11,10 @@ const Footer = () => {
           <h3 className='text-[20px] font-bold text-[#000000B2] '>Bizning ijtimoiy tarmoqlarda</h3>
           <div className="flex items-center gap-[10px] mt-[21px] mb-[39.33px]">
             <FaceBookIcon/>
-            {/* <Image className='w-[44px] h-[40px] ' src={"/images/facebook.png"} alt='f' width={44} height={40} priority /> */}
             <YouTubeIcon/>
-            {/* <Image className='w-[44px] h-[40px] ' src={"/images/yutube.png"} alt='y' width={44} height={40} priority /> */}
-            
-            <Image className='w-[44px] h-[40px] ' src={"/images/telegram.png"} alt='tg' width={44} height={40} priority />
-            <Image className='w-[44px] h-[40px] ' src={"/images/twitter.png"} alt='t' width={44} height={40} priority />
-            <Image className='w-[44px] h-[40px] ' src={"/images/instagram.png"} alt='i' width={44} height={40} priority />
+            <TelegramIcon/>
+            <TwitterIcon/>
+            <InstagramIcon/>
           </div>
           <h4 className='text-[20px] font-bold text-[#000000B2] mb-[12px]'>Mobil ilovani yuklab oling</h4>
           <div className="flex gap-[12px] mb-[57px]">
