@@ -2,12 +2,12 @@ import Image from 'next/image'
 import Button from '../Button'
 import React, { FC } from 'react'
 import { IMG_API } from '@/hooks/getEnv'
+import { useTranslations } from 'next-intl'
 import formatPrice from '@/hooks/formatPrice'
 import { useRouter } from '@/i18n/navigation'
 import { ProductType } from '@/types/ProductType'
 import { useQueryClient } from '@tanstack/react-query'
 import { CompareIcon, ShopIcon, WishlistIcon } from '@/assets/icons'
-import { useTranslations } from 'next-intl'
 
 const ProductItem: FC<{ item: ProductType }> = ({ item }) => {
     const router = useRouter()
@@ -16,7 +16,7 @@ const ProductItem: FC<{ item: ProductType }> = ({ item }) => {
     const monthlyPayment = Math.ceil(item.price / 12)
 
     function handlClick(){
-        router.push(`${item.category.name}/${item.id}`)
+        router.push(`/${item.id}`)
         queryClient.invalidateQueries({queryKey:['single_page']})
     }
  return (

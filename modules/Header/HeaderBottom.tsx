@@ -1,33 +1,42 @@
-"use client"
-import React from 'react'
-import Link from 'next/link';
-import { getCategories } from '@/service/getCategories'
-import { HeaderBottomType } from '@/types/HeaderButtomType';
+"use client";
+import HeaderForm from "@/components/HeaderForm";
+import { useRouter } from "@/i18n/navigation";
+import { getCategories } from "@/service/getCategories";
+import { HeaderBottomType } from "@/types/HeaderButtomType";
+import { useSearchParams } from "next/navigation";
+import React from "react";
 
-const HeaderBottom = () => {
-  const {data:categories, isLoading, isError} = getCategories();
-  console.log(categories)
+function HeaderBottom() {
+  const { data: categories, isLoading, isError } = getCategories();
+  const searchParams = useSearchParams();
+  const router = useRouter();
+
+  const handleGoCategory = (id: number) => {
+    const params = new URLSearchParams(searchParams.toString());
+    params.set("category", String(id));
+    router.push(`/pages/products?${params.toString()}`);
+  };
 
   return (
-<div className="flex items-center justify-between containers gap-5">
-  {isLoading ? (
-    Array.from({ length: 7 }).map((_, index) => (
-      <div key={index} className="w-24 h-5 bg-gray-300 animate-pulse rounded" />
-    ))
-  ) : isError ? (
-    Array.from({ length: 7 }).map((_, index) => (
-      <div key={index} className="w-24 h-5 bg-red-500 animate-pulse rounded" />
-    ))
-  ) : (
-    categories.map((item: HeaderBottomType) => (
-      <Link key={item.id} href="/" className="text-[#545D6A] text-[16px] hover:text-[#134E9B] duration-300">
-        {item.name}
-      </Link>
-    ))
-  )}
-</div>
-
-  )
+    <>
+      <div className="containers max-xl:hidden flex justify-between items-center text-[#545D6A] gap-4 flex-wrap">
+        {isLoading && (
+          Array.from({ length: 8 }).map((_, index) => (
+            <div key={index} className="w-[100px] h-[18px] rounded bg-gray-300 animate-pulse" />
+          ))
+        )}{isError && (
+          <div className="w-[100px] h-[18px] rounded bg-red-500 animate-pulse"></div>
+        )}{!isLoading && !isError && categories?.map((category: HeaderBottomType) => (
+          <p key={category.id} onClick={() => handleGoCategory(category.id)} className="cursor-pointer hover:text-[#134E9B] transition-colors duration-300">
+            {category.name}
+          </p>
+        ))}
+      </div>
+      <div className="xl:hidden containers mt-2">
+        <HeaderForm />
+      </div>
+    </>
+  );
 }
 
-export default HeaderBottom
+export default HeaderBottom;

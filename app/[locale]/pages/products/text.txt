@@ -1,0 +1,41 @@
+          <Slider value={priceRange} min={0} max={50000} step={100}
+            onChange={handleSliderChange}
+            onChangeCommitted={handleSliderCommit}
+            valueLabelDisplay="auto"
+            valueLabelFormat={(value) => `uzs ${value}`}
+            sx={{
+              '& .MuiSlider-rail': {
+                backgroundColor: '#ddd',
+              },
+              '& .MuiSlider-thumb': {
+                backgroundColor: '#007bff',
+                transition: 'background-color 0.3s ease',
+              },
+            }}
+          />
+
+
+          sx={{
+                height: 5, // эквивалент h-[3px] + h-5 thumb
+                my: '26px', // my-[26px]
+                '& .MuiSlider-rail': {
+                  backgroundColor: '#D1D5DB', // bg-gray-300
+                  height: 3,
+                  borderRadius: '9999px',
+                },
+                '& .MuiSlider-track': {
+                  backgroundColor: '#15509E',
+                  borderRadius: '9999px',
+                },
+                '& .MuiSlider-thumb': {
+                  width: 20,
+                  height: 20,
+                  backgroundColor: '#EBEFF3',
+                  border: '3px solid #15509E',
+                  boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)', // shadow-md
+                  '&:focus, &:hover, &.Mui-active': {
+                    boxShadow: '0 4px 6px rgba(0, 0, 0, 0.2)',
+                  },
+                  transition: 'background-color 0.3s ease',
+                },
+              }}

@@ -37,10 +37,10 @@ function HeaderTop() {
                     <Link href="/pages/aboutus" className="text-sm font-normal leading-[130%] text-[#545D6A] hover:text-[#134E9B]">
                         {t('about')}
                     </Link>
-                    <Link href="/products" className="text-sm font-normal leading-[130%] text-[#545D6A] hover:text-[#134E9B]">
+                    <Link href="/pages/products" className="text-sm font-normal leading-[130%] text-[#545D6A] hover:text-[#134E9B]">
                         {t('products')}
                     </Link>
-                    <Link href="/contact" className="text-sm font-normal leading-[130%] text-[#545D6A] hover:text-[#134E9B]">
+                    <Link href="/pages/contact" className="text-sm font-normal leading-[130%] text-[#545D6A] hover:text-[#134E9B]">
                         {t('contact')}
                     </Link>
                 </nav>
