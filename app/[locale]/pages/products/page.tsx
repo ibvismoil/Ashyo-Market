@@ -1,12 +1,11 @@
 'use client'
-
-import React, { useState } from 'react'
-import { useSearchParams, useRouter } from 'next/navigation'
-import { useQuery } from '@tanstack/react-query'
-import axios from 'axios'
-import ProductItem from '@/components/Products/ProductItem'
-import { Slider } from '@mui/material'
 import './style.css'
+import axios from 'axios'
+import { Slider } from '@mui/material'
+import React, { useState } from 'react'
+import { useQuery } from '@tanstack/react-query'
+import ProductItem from '@/components/Products/ProductItem'
+import { useSearchParams, useRouter } from 'next/navigation'
 
 const ProductsPage = () => {
   const searchParams = useSearchParams()
@@ -55,7 +54,7 @@ const ProductsPage = () => {
   return (
     <div className='containers'>
       <div className="flex !mt-[70px] gap-[30px]">
-        <aside className="min-w-[280px] w-[280px] bg-[#EBEFF3] p-[18px] rounded-[8px] max-[800px]:min-w-[220px] max-[680px]:hidden">
+        <aside className="min-w-[280px] h-[905px] w-[280px] bg-[#EBEFF3] p-[18px] rounded-[8px] max-[800px]:min-w-[220px] max-[680px]:hidden">
           <h3 className="font-medium text-[16px] leading-[34px] tracking-[0%] font-['Roboto']">Narx <span className="font-normal text-[14px] leading-[34px] tracking-[0%] font-['Roboto']">[ som ]</span></h3>
           <div>
             <div className="flex gap-[4px]">
@@ -66,7 +65,7 @@ const ProductsPage = () => {
                   className="w-full rounded-[5px] bg-[#FFFFFF] text-[14px] p-2" />
               </div>
               <div className='w-full flex flex-col'>
-                <span className='text-[12px] text-[#00000066] mb-[6px]'>dan</span>
+                <span className='text-[12px] text-[#00000066] mb-[6px]'>gacha</span>
                 <input type="number" value={priceRange[1]}
                   onChange={(e) => setPriceRange([priceRange[0], Number(e.target.value)])}
                   className="w-full rounded-[5px] bg-[#FFFFFF] text-[14px] p-2" />
@@ -79,22 +78,35 @@ const ProductsPage = () => {
               valueLabelFormat={(value) => `uzs ${value}`}
               sx={{ height: 5, my: '26px', '& .MuiSlider-rail': { backgroundColor: '#D1D5DB', height: 3, borderRadius: '9999px', }, '& .MuiSlider-track': { backgroundColor: '#15509E', borderRadius: '9999px', }, '& .MuiSlider-thumb': { width: 20, height: 20, backgroundColor: '#EBEFF3', border: '3px solid #15509E', boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)', '&:focus, &:hover, &.Mui-active': { boxShadow: '0 4px 6px rgba(0, 0, 0, 0.2)', }, transition: 'background-color 0.3s ease', }, }} />
           </div>
-          {/* <h3 className="font-bold mb-2">Категории</h3>
-        <div className="flex flex-wrap gap-2">
-          {['1', '2', '3', '4', '5'].map((id) => (
-            <button key={id} onClick={() => handleCategoryChange(id)}className={`py-1 px-3 rounded ${
-              category === id ? 'bg-blue-600 text-white' : 'bg-white border'}`}> Категория {id}
-            </button>
-          ))}
-        </div> */}
 
-          <h3 className="text-[16px] font-medium mt-[20px] mb-[15px]">Бренды</h3>
-          <div className="flex flex-wrap gap-[5px]">
-            {['Vivo', 'Samsung', 'Apple', 'Apple', 'Nokia', 'Oppo', 'Xoaimi', 'Realmi', 'Huawei'].map((name) => (
-              <button className='rounded-[30px] bg-[#FFFFFF] text-[#0A1729] text-[12px] hover:bg-[#134E9B] hover:text-[white] duration-500 cursor-pointer py-[7px] px-[18px]' key={name}>{name}</button>
-            ))}
-          </div>
+          
+            <h3 className="text-[16px] font-medium mt-[20px] mb-[15px]">Бренды</h3>
+            <div className="flex flex-wrap gap-[5px]">
+              {['Vivo', 'Samsung', 'Apple', 'Apple', 'Nokia', 'Oppo', 'Xoaimi', 'Realmi', 'Huawei'].map((name) => (
+                <button className='rounded-[30px] bg-[#FFFFFF] text-[#0A1729] text-[12px] hover:bg-[#134E9B] hover:text-[white] duration-500 cursor-pointer py-[7px] px-[18px]' key={name}>{name}</button>
+              ))}
+            </div>
 
+            <h3 className="text-[16px] font-medium mt-[20px] mb-[15px]">Tezkor xotira RAM</h3>
+            <div className="flex flex-wrap gap-[5px]">
+              {['2', '3', '4', '6', '8', '12', '16'].map((name) => (
+                <button className='rounded-[30px] bg-[#FFFFFF] text-[#0A1729] text-[12px] hover:bg-[#134E9B] hover:text-[white] duration-500 cursor-pointer py-[7px] px-[18px]' key={name}>{name} GB</button>
+              ))}
+            </div>
+
+            <h3 className="text-[16px] font-medium mt-[20px] mb-[15px]">Doiymi xotira ROM</h3>
+            <div className="flex flex-wrap gap-[5px]">
+              {['32', '64', '128', '256', '512'].map((name) => (
+                <button className='rounded-[30px] bg-[#FFFFFF] text-[#0A1729] text-[12px] hover:bg-[#134E9B] hover:text-[white] duration-500 cursor-pointer py-[7px] px-[18px]' key={name}>{name} GB</button>
+              ))}
+            </div>
+
+            <h3 className="text-[16px] font-medium mt-[20px] mb-[15px]">Akkumulyator hajmi</h3>
+            <div className="flex flex-wrap gap-[5px]">
+              {['3000', '3200', '3600', '4000', '4500', '5000', '6000', '7000'].map((name) => (
+                <button className='rounded-[30px] bg-[#FFFFFF] text-[#0A1729] text-[12px] hover:bg-[#134E9B] hover:text-[white] duration-500 cursor-pointer py-[7px] px-[18px]' key={name}>{name} mAh</button>
+              ))}
+            </div>
         </aside>
 
         <main className="flex-1">

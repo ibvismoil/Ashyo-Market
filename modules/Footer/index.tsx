@@ -45,9 +45,9 @@ const Footer = () => {
           <h3 className='text-[#000000B2] font-bold text-[20px] ml-[8px] mb-[13px]'>Aloqa</h3>
           <h2 className='text-[#06172D] font-bold text-[24px] mb-[32px]'>+998 (71) 123-45-67</h2>
           <p className='ml-[4px] text-[#000000B2] font-normal text-[16px] mb-[12px]'>Savolingiz bormi?</p>
-          <div className="flex items-center px-[19px] py-[15px] bg-[#EBEFF3] rounded-[12px] w-full">
+          <div className="flex items-center bg-[#EBEFF3] px-1 rounded-[12px] w-full">
             <input type="text" placeholder="O’zingiz qiziqtirgan savollarni bering"
-              className="bg-transparent outline-none flex-1 text-black font-montserrat text-base placeholder:text-[#9CA3AF]"/>
+              className="bg-transparent outline-none px-[19px] py-[15px] flex-1 text-black font-montserrat text-base placeholder:text-[#9CA3AF]"/>
             <ChatIcon/>
           </div>
 
