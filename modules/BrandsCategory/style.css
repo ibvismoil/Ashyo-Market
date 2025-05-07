@@ -1,49 +1,75 @@
 .brand-category-wrapper {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(2, 249px);
-    gap: 10px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(2, 249px);
+  gap: 10px;
+  grid-template-areas:
+    "a a b c h"
+    "e f f g h";
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(7, auto);
     grid-template-areas:
-      "a a b c h"
-      "e f f g h";
+      "a"
+      "b"
+      "c"
+      "h"
+      "e"
+      "f"
+      "g";
   }
-  
+}
+
+.brand-category-item {
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.category-title {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: transparent;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 20px;
+  border-color: white;
+  font-size: 14px;
+  font-weight: 500;
+  z-index: 2;
+
+  @media (max-width: 768px) {
+    font-size: 12px;
+    padding: 3px 8px;
+  }
+}
+
+.category-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+
+  @media (max-width: 768px) {
+    height: auto;
+    max-height: 200px;
+  }
+}
+
+.item-1 { background-color: #5C4F8C; grid-area: a; }
+.item-2 { background-color: #797C7D; grid-area: b; }
+.item-3 { background-color: #A1D7F3; grid-area: c; }
+.item-4 { background-color: #134E9B; grid-area: h; }
+.item-5 { background-color: #B0B0B0; grid-area: e; }
+.item-6 { background-color: #CEAF75; grid-area: f; }
+.item-7 { background-color: #DFDFDF; grid-area: g; }
+
+@media (max-width: 768px) {
   .brand-category-item {
-    border-radius: 10px;
-    overflow: hidden;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    margin-bottom: 10px;
   }
-  
-
-  .category-title {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    background-color: transparent;
-    color: white;
-    padding: 5px 10px;
-    border-radius: 20px;
-    border-color: white;
-    font-size: 14px;
-    font-weight: 500;
-    z-index: 2;
-  }
-
-  .category-image {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-  }
-
-  .item-1 { background-color: #5C4F8C; grid-area: a; }
-  .item-2 { background-color: #797C7D; grid-area: b; }
-  .item-3 { background-color: #A1D7F3; grid-area: c; }
-  .item-4 { background-color: #134E9B; grid-area: h; }
-  .item-5 { background-color: #B0B0B0; grid-area: e; }
-  .item-6 { background-color: #CEAF75; grid-area: f; }
-  .item-7 { background-color: #DFDFDF; grid-area: g; }
-
-  
+}

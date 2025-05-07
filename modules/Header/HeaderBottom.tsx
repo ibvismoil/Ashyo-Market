@@ -32,9 +32,6 @@ function HeaderBottom() {
           </p>
         ))}
       </div>
-      <div className="xl:hidden containers mt-2">
-        <HeaderForm />
-      </div>
     </>
   );
 }

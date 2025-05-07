@@ -7,7 +7,8 @@ import Modal from '@/components/Modal'
 import { Auth } from './Auth'
 
 const HeaderCenterActions = () => {
-    const [open, setOpen] = useState<boolean>(false)
+    const [openAuth, setOpenAuth] = useState(false)
+
     const activeList = [
         {
             id: 1,
@@ -32,23 +33,23 @@ const HeaderCenterActions = () => {
     ]
 
     return (
-        <>
+        <div className="flex items-center space-x-4">
             {activeList.map((item: HeaderActionType) =>
                 item.id === 4 ? (
-                    <div key={item.id} onClick={() => setOpen(true)}>
+                    <div key={item.id} onClick={() => setOpenAuth(true)}>
                         <HeaderAction actionCounnt={item.actionCounnt} icon={item.icon} />
                     </div>
                 ) : (
                     <HeaderAction key={item.id} actionCounnt={item.actionCounnt} icon={item.icon} />
                 )
             )}
-            {open && (
-                <Modal open={open} setOpen={setOpen}>
-                <Auth onClose={() => setOpen(false)} />
-              </Modal>                
-            )}
 
-        </>
+            {openAuth && (
+                <Modal open={openAuth} setOpen={setOpenAuth}>
+                    <Auth onClose={() => setOpenAuth(false)} />
+                </Modal>
+            )}
+        </div>
     )
 }
 

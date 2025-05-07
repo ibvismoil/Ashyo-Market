@@ -1,41 +1,60 @@
 .swiper {
-    width: 100%;
-    height: 450px;
+  width: 100%;
+  height: 300px; /* Уменьшено для мобильных */
+}
+
+@media (min-width: 640px) {
+  .swiper {
+    height: 450px; /* Высота для десктопов */
+  }
 }
 
 .swiper-slide {
-    font-size: 18px;
-    position: relative;
-    display: flex;
+  font-size: 18px;
+  position: relative;
+  display: flex;
+  flex-direction: column; /* Вертикальное расположение на мобильных */
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
 
-    align-items: center;
+@media (min-width: 768px) {
+  .swiper-slide {
+    flex-direction: row; /* Горизонтальное расположение на десктопах */
     padding-top: 147px;
     padding-bottom: 130px;
+  }
 }
-.hero > .swiper > .swiper-wrapper > .swiper-slide:nth-child(2) > img{
-    bottom: -80px;
+
+/* Убираем кастомизацию для второго и третьего слайда, так как размеры теперь управляются через Tailwind */
+.hero > .swiper > .swiper-wrapper > .swiper-slide:nth-child(2) > img {
+  bottom: 0; /* Убираем смещение */
 }
-.hero > .swiper > .swiper-wrapper > .swiper-slide:nth-child(3) > img{
-    transform: scale(2);
-    bottom: -95px;
+
+.hero > .swiper > .swiper-wrapper > .swiper-slide:nth-child(3) > img {
+  transform: none; /* Убираем масштабирование */
+  bottom: 0;
 }
 
 .swiper-pagination {
-    gap: 12px;
-    display: flex;
-    align-items: center;
+  gap: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: 10px !important;
 }
 
 .swiper-pagination-bullet {
-    width: 12px !important;
-    height: 12px !important;
-    background-color: white !important;
-    opacity: 1 !important;
+  width: 12px !important;
+  height: 12px !important;
+  background-color: white !important;
+  opacity: 1 !important;
 }
 
 .swiper-pagination-bullet-active {
-    width: 25px !important;
-    height: 25px !important;
-    background-color: #95DEF3 !important;
-    border: 6px solid white;
+  width: 25px !important;
+  height: 25px !important;
+  background-color: #95DEF3 !important;
+  border: 6px solid white;
 }

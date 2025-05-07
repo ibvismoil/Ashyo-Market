@@ -3,6 +3,7 @@ import './style.css'
 import axios from 'axios'
 import { Slider } from '@mui/material'
 import React, { useState } from 'react'
+import Skeleton from '@mui/material/Skeleton';
 import { useQuery } from '@tanstack/react-query'
 import ProductItem from '@/components/Products/ProductItem'
 import { useSearchParams, useRouter } from 'next/navigation'
@@ -79,48 +80,60 @@ const ProductsPage = () => {
               sx={{ height: 5, my: '26px', '& .MuiSlider-rail': { backgroundColor: '#D1D5DB', height: 3, borderRadius: '9999px', }, '& .MuiSlider-track': { backgroundColor: '#15509E', borderRadius: '9999px', }, '& .MuiSlider-thumb': { width: 20, height: 20, backgroundColor: '#EBEFF3', border: '3px solid #15509E', boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)', '&:focus, &:hover, &.Mui-active': { boxShadow: '0 4px 6px rgba(0, 0, 0, 0.2)', }, transition: 'background-color 0.3s ease', }, }} />
           </div>
 
-          
-            <h3 className="text-[16px] font-medium mt-[20px] mb-[15px]">Бренды</h3>
-            <div className="flex flex-wrap gap-[5px]">
-              {['Vivo', 'Samsung', 'Apple', 'Apple', 'Nokia', 'Oppo', 'Xoaimi', 'Realmi', 'Huawei'].map((name) => (
-                <button className='rounded-[30px] bg-[#FFFFFF] text-[#0A1729] text-[12px] hover:bg-[#134E9B] hover:text-[white] duration-500 cursor-pointer py-[7px] px-[18px]' key={name}>{name}</button>
-              ))}
-            </div>
+          <h3 className="text-[16px] font-medium mt-[20px] mb-[15px]">Бренды</h3>
+          <div className="flex flex-wrap gap-[5px]">
+            {['Vivo', 'Samsung', 'Apple', 'Apple', 'Nokia', 'Oppo', 'Xoaimi', 'Realmi', 'Huawei'].map((name) => (
+              <button className='rounded-[30px] bg-[#FFFFFF] text-[#0A1729] text-[12px] hover:bg-[#134E9B] hover:text-[white] duration-500 cursor-pointer py-[7px] px-[18px]' key={name}>{name}</button>
+            ))}
+          </div>
 
-            <h3 className="text-[16px] font-medium mt-[20px] mb-[15px]">Tezkor xotira RAM</h3>
-            <div className="flex flex-wrap gap-[5px]">
-              {['2', '3', '4', '6', '8', '12', '16'].map((name) => (
-                <button className='rounded-[30px] bg-[#FFFFFF] text-[#0A1729] text-[12px] hover:bg-[#134E9B] hover:text-[white] duration-500 cursor-pointer py-[7px] px-[18px]' key={name}>{name} GB</button>
-              ))}
-            </div>
+          <h3 className="text-[16px] font-medium mt-[20px] mb-[15px]">Tezkor xotira RAM</h3>
+          <div className="flex flex-wrap gap-[5px]">
+            {['2', '3', '4', '6', '8', '12', '16'].map((name) => (
+              <button className='rounded-[30px] bg-[#FFFFFF] text-[#0A1729] text-[12px] hover:bg-[#134E9B] hover:text-[white] duration-500 cursor-pointer py-[7px] px-[18px]' key={name}>{name} GB</button>
+            ))}
+          </div>
 
-            <h3 className="text-[16px] font-medium mt-[20px] mb-[15px]">Doiymi xotira ROM</h3>
-            <div className="flex flex-wrap gap-[5px]">
-              {['32', '64', '128', '256', '512'].map((name) => (
-                <button className='rounded-[30px] bg-[#FFFFFF] text-[#0A1729] text-[12px] hover:bg-[#134E9B] hover:text-[white] duration-500 cursor-pointer py-[7px] px-[18px]' key={name}>{name} GB</button>
-              ))}
-            </div>
+          <h3 className="text-[16px] font-medium mt-[20px] mb-[15px]">Doiymi xotira ROM</h3>
+          <div className="flex flex-wrap gap-[5px]">
+            {['32', '64', '128', '256', '512'].map((name) => (
+              <button className='rounded-[30px] bg-[#FFFFFF] text-[#0A1729] text-[12px] hover:bg-[#134E9B] hover:text-[white] duration-500 cursor-pointer py-[7px] px-[18px]' key={name}>{name} GB</button>
+            ))}
+          </div>
 
-            <h3 className="text-[16px] font-medium mt-[20px] mb-[15px]">Akkumulyator hajmi</h3>
-            <div className="flex flex-wrap gap-[5px]">
-              {['3000', '3200', '3600', '4000', '4500', '5000', '6000', '7000'].map((name) => (
-                <button className='rounded-[30px] bg-[#FFFFFF] text-[#0A1729] text-[12px] hover:bg-[#134E9B] hover:text-[white] duration-500 cursor-pointer py-[7px] px-[18px]' key={name}>{name} mAh</button>
-              ))}
-            </div>
+          <h3 className="text-[16px] font-medium mt-[20px] mb-[15px]">Akkumulyator hajmi</h3>
+          <div className="flex flex-wrap gap-[5px]">
+            {['3000', '3200', '3600', '4000', '4500', '5000', '6000', '7000'].map((name) => (
+              <button className='rounded-[30px] bg-[#FFFFFF] text-[#0A1729] text-[12px] hover:bg-[#134E9B] hover:text-[white] duration-500 cursor-pointer py-[7px] px-[18px]' key={name}>{name} mAh</button>
+            ))}
+          </div>
         </aside>
 
         <main className="flex-1">
           {isLoading ? (
-            <p>Loading......</p>
+            <div className="grid grid-cols-3 gap-5">
+              {[...Array(6)].map((_, index) => (
+                <div key={index} className="p-4">
+                  <Skeleton
+                    variant="rectangular"
+                    width="100%"
+                    height={200}
+                    sx={{ borderRadius: '8px', bgcolor: '#EBEFF3' }}
+                  />
+                  <Skeleton variant="text" width="60%" sx={{ mt: 2, bgcolor: '#EBEFF3' }} />
+                  <Skeleton variant="text" width="40%" sx={{ bgcolor: '#EBEFF3' }} />
+                </div>
+              ))}
+            </div>
           ) : (
             <div className="grid grid-cols-3 gap-5">
               {data?.items && data.items.length > 0 ? (
                 data.items.map((item: any) => (
-                  <div key={item.id} className="" style={{}}>
+                  <div key={item.id} className="">
                     <ProductItem item={item} />
                   </div>
                 ))
-              ) : (
+              ) : ( 
                 <p>Нет продуктов для отображения</p>
               )}
             </div>

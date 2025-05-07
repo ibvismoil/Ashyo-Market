@@ -32,7 +32,9 @@ const HeaderPopapCategory = () => {
           ))
         )}
       </div>
-      <div className="w-[70%] bg-[#ffffff]"></div>
+      <div className="w-[70%] py-2 px-2 bg-[#ffffff]">
+        Бам Бам Бам Бам Бам Бам Бам Бам  
+      </div>
     </div>
   )
 }
