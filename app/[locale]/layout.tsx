@@ -1,15 +1,15 @@
-import { NextIntlClientProvider, hasLocale } from "next-intl";
-import { notFound } from "next/navigation";
-import { routing } from "@/i18n/routing";
-import { QueryProvider } from "@/query/QueryClientProvider";
+import { NextIntlClientProvider, hasLocale } from 'next-intl';
+import { notFound } from 'next/navigation';
+import { routing } from '@/i18n/routing';
+import { QueryProvider } from '@/query/QueryClientProvider';
 import "./globals.css";
-import { LangContext } from "@/context/Context";
-import Layout from "@/features";
-import { Toaster } from "sonner";
+import { LangContext } from '@/context/Context';
+import Layout from '@/features';
+import { Toaster } from 'sonner';
 
 export default async function LocaleLayout({
   children,
-  params,
+  params
 }: {
   children: React.ReactNode;
   params: Promise<{ locale: string }>;
@@ -26,10 +26,10 @@ export default async function LocaleLayout({
         <title>Ashyo Market</title>
       </head>
       <body>
-        <NextIntlClientProvider locale={locale}>
+        <NextIntlClientProvider>
           <QueryProvider>
-            <LangContext>{/* Передаём children сюда */}
-              <Toaster position="top-center" />
+            <LangContext>
+            <Toaster position="top-center" />
               <Layout>{children}</Layout>
             </LangContext>
           </QueryProvider>

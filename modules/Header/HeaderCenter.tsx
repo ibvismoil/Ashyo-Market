@@ -12,7 +12,6 @@ const HeaderCenter = () => {
     <div className='containers'>
       <div>
         <HeaderCenterMobile />
-        <HeaderPopapCategory />
       </div>
       <div className='hidden sm:block '>
         <div className="flex relative items-center justify-between containers !py-[30px]">

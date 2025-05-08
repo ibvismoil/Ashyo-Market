@@ -15,10 +15,10 @@ const HeaderForm = () => {
     const { setShowCategory, showCategory } = useContext(Context)
     const [searchValue, setSearchValue] = useState<string>("")
     const [searchResult, setSearchResult] = useState<HeaderSearchType[]>([])
-    const [showSearch, setShowSearch] = useState<boolean>(false)
+    const [ShowSearch, setShowSearch] = useState<boolean>(false)
     const [isLoading, setIsLoading] = useState<boolean>(false)
 
-    function handleSearch(e: ChangeEvent<HTMLInputElement>) {
+    function hendleSearch(e: ChangeEvent<HTMLInputElement>) {
         setSearchValue(e.target.value)
         setIsLoading(true)
         setShowSearch(true)
@@ -33,43 +33,33 @@ const HeaderForm = () => {
         setShowSearch(false)
     }
 
-    const searchWaitingValue = debounce(searchValue, 1000)
+    const searchWatingValue = debounce(searchValue, 1000)
     useEffect(() => {
-        if (searchWaitingValue) {
-            instance().get("/categories/search", { params: { name: searchWaitingValue } }).then(res => {
+        if (searchWatingValue) {
+            instance().get("/categories/search", { params: { name: searchWatingValue } }).then(res => {
                 setSearchResult(res.data);
                 setIsLoading(false)
             })
         }
-    }, [searchWaitingValue])
+    }, [searchWatingValue])
 
     return (
-        <div className="flex items-center gap-2 w-full px-2">
-            <Button
-                onClick={() => setShowCategory(!showCategory)}
-                title={t("category")}
-                iconPosition="right"
-                icon={<ArrowDownIcon className={`transition-transform duration-300 ${showCategory ? 'rotate-180' : ''}`} />}
-                extrStyle="text-white px-4 py-2 rounded-lg text-sm md:text-base md:px-6"
-            />
-
-            <div className="relative flex-1">
-                <Input value={searchValue} onChange={handleSearch} extraStyle="w-full pr-12 bg-gray-100 border-none rounded-lg text-sm md:text-base" type="text" placeholder={t("placeholder")}/>
-                <Button extrStyle="absolute top-0 bottom-0 right-0 !p-0 w-12 h-full p-0 rounded-r-lg flex items-center justify-center" iconPosition="right" icon={<SearchIcon/>}/>
-                <ul
-                    className={`absolute left-0 right-0 mt-2 bg-white rounded-lg shadow-lg transition-all duration-300 overflow-hidden z-50 ${
-                        showSearch ? (searchResult.length > 2 ? "h-auto overflow-auto py-4" : "h-auto py-4") : "h-0"
-                    }`}
-                >
+        <div className='flex items-center gap-[10px]'>
+            <Button onClick={() => setShowCategory(!showCategory)} title={t("category")}
+                iconPosition='right'
+                icon={<ArrowDownIcon className={`transition-transform duration-300 ${showCategory ? 'rotate-180' : ''}`} />}/>
+            <div className="w-[518px] relative ">
+                <Input value={searchValue} onChange={hendleSearch} extraStyle='w-full' type='text' placeholder={t("placeholder")} />
+                <Button extrStyle='absolute top-0 bottom-0 right-0 !w-[58px] h-[100%] !p-0' iconPosition='right' icon={<SearchIcon />} />
+                <ul className={`absolute left-0 right-0 mt-2 bg-white rounded-lg shadow-lg transition-all duration-300 overflow-hidden z-50 ${ShowSearch ? (searchResult.length > 2 ? "h-auto overflow-auto py-4" : "h-auto py-4") : "h-0"
+                    }`}>
                     {isLoading ? (
                         <li className="text-center text-gray-500 py-4">Loading...</li>
                     ) : (
-                        showSearch &&
+                        ShowSearch &&
                         searchResult.map((item) => (
                             <li key={item.id} className="border-b last:border-b-0 border-gray-200 hover:bg-gray-100 transition-colors cursor-pointer">
-                                <Link href={`/pages/products?category=${item.id}`} className="block px-6 py-3 text-[#545D6A]" onClick={() => handleSearchClick(item.name)}>
-                                    {item.name}
-                                </Link>
+                                <Link href={"/"} className="block px-6 py-3 text-[#545D6A]" onClick={() => handleSearchClick(item.name)}>{item.name} </Link>
                             </li>
                         ))
                     )}
