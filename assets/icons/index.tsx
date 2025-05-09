@@ -23,7 +23,7 @@ export const LocationIcon = () => {
 
     )
 }
-export const ArrowDownIcon = ({ className = "" }) => {
+export const ArrowDownIcon = ({ className = "md:w-[24px] md:h-[24px]" }) => {
     return (
         <svg
             width="10"

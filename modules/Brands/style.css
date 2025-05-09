@@ -63,9 +63,8 @@
     align-items: center;
     justify-content: center;
   }
-  
-  /* Rasm transform */
-  .brands-iteam:nth-child(2) > img {
+
+  /* .brands-iteam:nth-child(2) > img {
     transform: scale(3);
   }
   .brands-iteam:nth-child(5) > img {
@@ -73,7 +72,7 @@
   }
   .brands-iteam:nth-child(7) > img {
     transform: scale(1.5);
-  }
+  } */
   
   @media (max-width: 576px) {
     .brands-wrapper {

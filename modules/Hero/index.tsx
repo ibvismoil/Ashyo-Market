@@ -3,6 +3,7 @@ import 'swiper/css';
 import './styles.css'
 import React from 'react'
 import 'swiper/css/autoplay';
+import Link from 'next/link';
 import 'swiper/css/pagination';
 import Image from 'next/image';
 import 'swiper/css/effect-fade';
@@ -13,7 +14,6 @@ import { BannersType } from '@/types/BannersType';
 import { getBanners } from '@/service/getBanners';
 import Skeleton from '@mui/material/Skeleton';
 import { Pagination, Autoplay, EffectFade } from 'swiper/modules';
-import Link from 'next/link';
 
 const Hero = () => {
   const { data: banners = [], isError, isLoading } = getBanners();
@@ -36,14 +36,7 @@ const Hero = () => {
   return (
     <div className="bg-[#F3F0F0] mt-[10px] py-6 sm:py-11">
       <div className="containers px-4 sm:px-6">
-        <Swiper
-          pagination={{ clickable: true }}
-          autoplay={{ delay: 5000, disableOnInteraction: false }}
-          effect="fade"
-          fadeEffect={{ crossFade: true }}
-          modules={[Pagination, Autoplay, EffectFade]}
-          className="mySwiper"
-        >
+        <Swiper pagination={{ clickable: true }} autoplay={{ delay: 5000, disableOnInteraction: false }} effect="fade" fadeEffect={{ crossFade: true }} modules={[Pagination, Autoplay, EffectFade]} className="mySwiper">
           {banners.map((item: BannersType, index: number) => (
             <SwiperSlide key={item.id}>
               <div className="relative flex flex-col items-center md:flex-row md:items-center justify-between h-[300px] sm:h-[450px] gap-4">
@@ -55,21 +48,13 @@ const Hero = () => {
                     {item.description}
                   </p>
                   <Link href={`/product_details/${item.id}`}>
-                    <Button title="Batafsil" />
+                    <Button extrStyle='text-[12px] py-[12px] px-[18px]' title="Batafsil" />
                   </Link>
                 </div>
-                <div
-                  className={`relative order-2 ${
+                <div className={`relative order-2 ${
                     index === 2 ? 'w-[300px] h-[300px] sm:w-[450px] sm:h-[450px] md:w-[650px] md:h-[650px]' : 'w-[250px] h-[250px] sm:w-[350px] sm:h-[350px] md:w-[450px] md:h-[450px]'
-                  }`}
-                >
-                  <Image
-                    src={`${IMG_API}/${item.image}`}
-                    alt="Banner Image"
-                    fill
-                    className="object-contain"
-                    priority
-                  />
+                  }`}>
+                  <Image src={`${IMG_API}/${item.image}`} alt="Banner Image" fill className="object-contain" priority/>
                 </div>
               </div>
             </SwiperSlide>

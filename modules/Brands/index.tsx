@@ -17,7 +17,7 @@ const Brands = () => {
             <span>{item.name}</span>
           ) : (
             <Image
-              className="max-w-[80px] w-full h-auto object-contain"
+              className="max-w-[60px] w-full h-auto object-contain"
               src={`${IMG_API}/${item.image}`}
               alt={item.name}
               width={150}
