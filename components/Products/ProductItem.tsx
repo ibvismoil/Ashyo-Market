@@ -15,31 +15,31 @@ const ProductItem: FC<{ item: ProductType }> = ({ item }) => {
     const t = useTranslations('Products')
     const monthlyPayment = Math.ceil(item.price / 12)
 
-    function handlClick(){
+    function handlClick() {
         router.push(`/product_details/${item.id}`)
-        queryClient.invalidateQueries({queryKey:['single_page']})
+        queryClient.invalidateQueries({ queryKey: ['single_page'] })
     }
- return (
-    <>
-        <div onClick={() => handlClick()} className="relative product-img-wrapper bg-[#ebeff3] py-[43px] rounded-[6px] w-full flex items-center justify-center mb-[16px]">
-            <Image className='w-[202px] h-[202px] object-contain' src={`${IMG_API}/${item.image}`} alt={item.name} width={202} height={202} priority />
+    return (
+        <>
+            <div onClick={() => handlClick()} className="relative product-img-wrapper bg-[#ebeff3] py-[43px] rounded-[6px] w-full flex items-center justify-center mb-[16px]">
+                <Image className='md:w-[202px] w-[130px] h-[202px] object-contain' src={`${IMG_API}/${item.image}`} alt={item.name} width={202} height={202} priority />
                 {item.is_aksiya && <span className='absolute font-semibold top-[15px] left-[15px] text-[14px] text-[#E81504] bg-white py-[7px] px-[10px] rounded-[6px]'>{t('akciys')}</span>}
-            <div className='absolute top-[21px] right-[25px]'><WishlistIcon/></div>
-        </div>
-        <div onClick={() => handlClick()} className="">
-            <p className='line-clamp-2 text-[16px] text-[#545D6A] mb-[28px]'>{item.description}</p>
-        <div className="flex justify-between items-end">
-        <div onClick={() => handlClick()} className="">
-            <strong className='font-black text-[28px] text-[#0A1729] mb-[10px]'>{formatPrice(item.price)} uzs</strong>
-            <p className='bg-[#F02C961A] text-[#F02C96] py-[7px] px-[10px] text-[15px] rounded-[3px]'>{item.nasiya} / {formatPrice(monthlyPayment)} uzs</p>
-        </div>
-        <div className="flex items-center gap-[10px]">
-            <Button extrStyle='bg-transparent !text-[#545D6A] border-[1px] border-[#EBEFF3] !p-0 w-[52px] h-[52px] flex items-center justify-center' iconPosition='right' icon={<CompareIcon />} />
-            <Button extrStyle='!p-0 w-[52px] h-[52px] flex items-center justify-center' iconPosition='right' icon={<ShopIcon />} />
-        </div>
-        </div>
-        </div>
-    </>
+                <div className='absolute top-[21px] right-[25px]'><WishlistIcon /></div>
+            </div>
+            <div onClick={() => handlClick()} className="">
+                <p className='line-clamp-2 md:text-[16px] text-[12px] text-[#545D6A] mb-[28px]'>{item.description}</p>
+                <div className="md:flex justify-between items-end">
+                    <div onClick={() => handlClick()} className="flex gap-[15px] items-center justify-between md:block md:gap-0">
+                        <strong className='font-black md:text-[28px] text-[15px] text-[#0A1729] mb-[10px]'>{formatPrice(item.price)} uzs</strong>
+                        <p className='bg-[#F02C961A] text-[#F02C96] py-[7px] px-[10px] text-[10px] md:text-[15px] rounded-[3px]'>{item.nasiya} / {formatPrice(monthlyPayment)} uzs</p>
+                    </div>
+                    <div className="flex items-center gap-[10px]">
+                        <Button extrStyle='bg-transparent !text-[#545D6A] border-[1px] border-[#EBEFF3] flex w-[52px] h-[52px] !p-0 items-center justify-center' iconPosition='right' icon={<CompareIcon />} />
+                        <Button extrStyle='md:!p-0 py-2 md:w-[52px] text-[12px] h-[52px] w-[125px] gap-[10px] flex items-center justify-center' iconPosition='right' title={<span className="block md:hidden">Savatcha</span>} icon={<ShopIcon className='w-[16px] h-[16px]' />} />
+                    </div>
+                </div>
+            </div>
+        </>
     )
 }
 

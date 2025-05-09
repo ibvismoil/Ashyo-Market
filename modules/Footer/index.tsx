@@ -72,13 +72,13 @@ const Footer = () => {
             <p className="text-[#000000B2] font-normal text-[16px] mb-[12px]">
               Savolingiz bormi?
             </p>
-            <div className="flex items-center bg-[#EBEFF3] px-1 rounded-[12px]">
+            <div className="flex items-center bg-[#EBEFF3] px-2 rounded-[12px]">
               <input
                 type="text"
                 placeholder="O’zingiz qiziqtirgan savollarni bering"
                 className="bg-transparent outline-none px-[19px] py-[15px] flex-1 text-black font-montserrat text-base placeholder:text-[#9CA3AF]"
               />
-              <ChatIcon />
+              <ChatIcon/>
             </div>
           </div>
 

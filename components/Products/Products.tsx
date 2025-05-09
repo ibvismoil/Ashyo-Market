@@ -26,7 +26,7 @@ const Products: FC<{ title: string, api: string }> = ({ title, api }) => {
           ))
         ) : (
           products.map((item: ProductType, index: number) => (
-            <SwiperSlide key={item.id} className="swiper-slide animate-dice" style={{ animationDelay: `${index * 150}ms` }}>
+            <SwiperSlide key={item.id} className="swiper-slide animated-style-class animate-dice" style={{ animationDelay: `${index * 150}ms` }}>
               <ProductItem item={item} />
             </SwiperSlide>
           ))
