@@ -1,3 +1,4 @@
+import './styles.css'
 import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -13,7 +14,7 @@ const HeaderCenter = () => {
       <div>
         <HeaderCenterMobile />
       </div>
-      <div className='hidden sm:block '>
+      <div className='relax'>
         <div className="flex relative items-center justify-between containers !py-[30px]">
           <div className=''>
             <Link className='flex items-center translate-x-[-6px]' href={'/'}>

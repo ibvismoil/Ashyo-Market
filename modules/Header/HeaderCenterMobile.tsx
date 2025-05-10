@@ -1,4 +1,5 @@
 "use client"
+import './styles.css'
 import Image from 'next/image'
 import Link from 'next/link'
 import React, { useState, ChangeEvent, useContext, useEffect } from 'react'
@@ -75,7 +76,7 @@ const HeaderCenterMobile = () => {
     }, [searchWaitingValue])
 
     return (
-        <div className='block md:hidden'>
+        <div className='relux'>
             <div className="flex flex-col w-full px-2">
                 <div className="flex items-center justify-between w-full mb-2">
                     <Link className="flex items-center translate-x-[-6px]" href={'/'}>

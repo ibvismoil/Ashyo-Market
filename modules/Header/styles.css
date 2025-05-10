@@ -1,0 +1,13 @@
+.relux{
+    display: none;
+}
+@media (max-width: 1050px) {
+    .relax {
+        display: none;
+    }
+}
+@media (max-width: 1050px) {
+    .relux {
+        display: flex;
+    }
+}

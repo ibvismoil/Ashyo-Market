@@ -27,7 +27,7 @@ function HeaderTop() {
     }, [])
 
     return (
-        <div className="hidden sm:block bg-[#EBEFF3] py-[11px]">
+        <div className="relax bg-[#EBEFF3] py-[11px]">
             <div className="containers flex items-center justify-between">
                 <nav className="flex items-center gap-7">
                     <Link href="/location" className="flex items-center gap-[13px] text-sm font-normal leading-[130%] text-[#545D6A] hover:text-[#134E9B]">
