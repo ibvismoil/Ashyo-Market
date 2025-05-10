@@ -1,17 +1,10 @@
-import {
-  AppStoreIcon,
-  ChatIcon,
-  FaceBookIcon,
-  GooglePLayIocn,
-  TelegramIcon,
-  TwitterIcon,
-  YouTubeIcon
-} from '@/assets/icons'
+import { AppStoreIcon, ChatIcon, FaceBookIcon, GooglePLayIocn, TelegramIcon, TwitterIcon, YouTubeIcon } from '@/assets/icons'
+import { Instagram } from 'lucide-react'
 import React from 'react'
 
 const Footer = () => {
   return (
-    <div className="w-full px-4 md:px-16 py-8 bg-white border-t border-[#E5E5E5]">
+    <div className="w-full mt-4 px-4 md:px-16 py-8 bg-white">
       <div className="flex flex-col md:flex-row justify-between gap-10">
         
         <div className="flex-1">
@@ -23,6 +16,9 @@ const Footer = () => {
             <YouTubeIcon />
             <TelegramIcon />
             <TwitterIcon />
+            <div className='bg-[#EBEFF3] rounded-md px-2 py-2'>
+                <Instagram className='text-[#FF0000]'/>
+            </div>
           </div>
 
           <h4 className="text-[20px] font-bold text-[#000000B2] mb-3">
