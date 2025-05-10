@@ -25,7 +25,9 @@ function HeaderBottom() {
             <div key={index} className="w-[100px] h-[18px] rounded bg-gray-300 animate-pulse" />
           ))
         )}{isError && (
-          <div className="w-[100px] h-[18px] rounded bg-red-500 animate-pulse"></div>
+          Array.from({ length: 8 }).map((_, index) =>(
+            <div key={index} className="w-[100px] h-[18px] rounded bg-red-500 animate-pulse"></div>
+          ))
         )}{!isLoading && !isError && categories?.map((category: HeaderBottomType) => (
           <p key={category.id} onClick={() => handleGoCategory(category.id)} className="cursor-pointer hover:text-[#134E9B] transition-colors duration-300">
             {category.name}

@@ -1,5 +1,4 @@
-
-.products> .swiper> .swiper-wrapper> .swiper-slide{
+.products>.swiper>.swiper-wrapper>.swiper-slide {
     width: 273px !important;
     display: flex;
     flex-direction: column;
@@ -8,20 +7,24 @@
     cursor: pointer;
     position: relative;
 }
-.products> .swiper> .swiper-wrapper> .swiper-slide> .product-img-wrapper{
+
+.products>.swiper>.swiper-wrapper>.swiper-slide>.product-img-wrapper {
     overflow: hidden;
 }
-.products> .swiper> .swiper-wrapper> .swiper-slide> .product-img-wrapper > img{
+
+.products>.swiper>.swiper-wrapper>.swiper-slide>.product-img-wrapper>img {
     transition: all 0.3s;
 }
 
 @media (max-width: 767px) {
-    .products > .swiper > .swiper-wrapper > .swiper-slide {
-      width: 180px !important;
-      height: auto;
-      padding-left: 10px;
-      padding-right: 10px;
+    .products>.swiper>.swiper-wrapper>.swiper-slide {
+        width: 180px !important;
+        height: 300px;
+        padding-left: 10px;
+        padding-right: 10px;
     }
-  
-  }
-  
+
+    .swiper {
+        height: 650px;
+    }
+}

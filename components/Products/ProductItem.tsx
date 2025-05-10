@@ -33,7 +33,7 @@ const ProductItem: FC<{ item: ProductType }> = ({ item }) => {
                         <strong className='font-black md:text-[28px] text-[15px] text-[#0A1729] mb-[10px]'>{formatPrice(item.price)} uzs</strong>
                         <p className='bg-[#F02C961A] text-[#F02C96] py-[7px] px-[10px] text-[10px] md:text-[15px] rounded-[3px]'>{item.nasiya} / {formatPrice(monthlyPayment)} uzs</p>
                     </div>
-                    <div className="flex items-center gap-[10px]">
+                    <div className="flex items-center justify-between gap-[10px]">
                         <Button extrStyle='bg-transparent !text-[#545D6A] border-[1px] border-[#EBEFF3] flex w-[52px] h-[52px] !p-0 items-center justify-center' iconPosition='right' icon={<CompareIcon />} />
                         <Button extrStyle='md:!p-0 py-2 md:w-[52px] text-[12px] h-[52px] w-[125px] gap-[10px] flex items-center justify-center' iconPosition='right' title={<span className="block md:hidden">Savatcha</span>} icon={<ShopIcon className='w-[16px] h-[16px]' />} />
                     </div>
