@@ -98,16 +98,16 @@ const SinglePage = () => {
           <Link className='text-[15px] text-[#B6BABF]' href={"/"}>{singleProduct.name}</Link>
         </div>
         <div>
-          <h2 className='my-[30px] text-[32px] font-bold'>{singleProduct.name}</h2>
-          <div className='flex'>
-            <div className='w-[45%] h-[430px] bg-[#EDEFF3] flex items-center rounded-xl shadow-lg justify-center relative'>
+          <h2 className='my-[30px] text-[32px] max-[740px]:text-[16px] font-bold'>{singleProduct.name}</h2>
+          <div className='max-[740px]:block flex'>
+            <div className='w-[45%] max-[740px]:w-[80%] h-[430px] bg-[#EDEFF3] flex items-center rounded-xl shadow-lg justify-center relative'>
               <Image className='w-[341px] h-[341px] object-contain' src={`${IMG_API}/${singleProduct.image}`} alt='Single image' width={341} height={341} priority />
               <div className='absolute top-[26px] right-[31px] flex gap-[20px]'>
                 <button className='cursor-pointer'><CompareIcon /></button>
                 <button className='cursor-pointer'><WishlistIcon /></button>
               </div>
             </div>
-            <div className='w-[45%] ml-[32px]'>
+            <div className='w-[45%] max-[740px]:w-[80%] max-[740px]:ml-0 ml-[32px]'>
               <div className="flex items-center gap-[20px] mt-[31px]">
                 <span className='text-[16px] text-[#515D6C] font-normal'>Narxi</span>
                 <p className='text-[32px] font-bold text-[#06172D]'>{formatPrice(singleProduct.price)}</p>
@@ -136,15 +136,26 @@ const SinglePage = () => {
         <div className='mt-[80px]'>
           <div className='flex items-center gap-[85px]'>
             <strong>Telefon xususiyatlar</strong>
-            <strong>Mijoslar</strong>
           </div>
-          <div className='w-[45%] mb-[100px]'>
+          <div className='w-[45%] mb-[50px]'>
             {variations?.options?.map((item: any) => (
-              <div key={item.id} className='py-[5px] border-b-[2px] text-[#545D6A] text-[18px] border-state3400 border-dashed flex justify-between'>
+              <div key={item.id} className='py-[5px] border-b-[2px] text-[#545D6A] text-[18px] font-mono border-state3400 border-dashed flex justify-between'>
                 <div className='w-[50%]'>{variations.name}</div>
                 <div className='w-[50%]'>{item?.value}</div>
               </div>
             ))}
+          </div>
+          <div className='mb-[50px]'>
+              <div className='py-[5px] text-[#545D6A] text-[18px]'>
+                <h1 className='text-[18px] text-black'>Description</h1>
+                <div className='font-mono'>{singleProduct.description}</div>
+              </div>
+          </div>
+          <div className='mb-[50px]'>
+              <div className='py-[5px] text-[#545D6A] text-[18px]'>
+                <h1 className='text-[18px] text-black'>Xulosa</h1>
+                <div className='font-mono'>{singleProduct.summary}</div>
+              </div>
           </div>
         </div>
       </div>
