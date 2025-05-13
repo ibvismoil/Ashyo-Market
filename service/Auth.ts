@@ -17,10 +17,11 @@ export const Login = () => {
   return useMutation({
     mutationFn: async (data: LoginType) => {
       const res = await instance().post("auth/login", data)
-      const { accessToken, refreshToken } = res.data
+      const { accessToken, refreshToken, user } = res.data
 
       setCookie("accessToken", accessToken, { maxAge: 60 * 60 * 24 * 7 }) 
       setCookie("refreshToken", refreshToken, { maxAge: 60 * 60 * 24 * 30 })
+      localStorage.setItem("user", JSON.stringify(user))
 
       return res.data
     },
