@@ -118,7 +118,7 @@ const HeaderCenterMobile = () => {
            </div>
         </div>
         <HeaderPopapCategory />
-        <div className={`fixed top-0 right-0 h-full w-64 bg-white/80 shadow-lg transform transition-transform duration-300 ease-in-out z-50 backdrop-blur-sm ${openSidebar ? 'translate-x-0' : 'translate-x-full'}`}>
+        <div className={`fixed top-0 right-0 h-full w-64 bg-white/85 shadow-lg transform transition-transform duration-300 ease-in-out z-50 backdrop-blur-sm ${openSidebar ? 'translate-x-0' : 'translate-x-full'}`}>
                  <div className="flex justify-end p-4">
                    <button onClick={() => setOpenSidebar(false)} className="text-gray-600">
                        ✕

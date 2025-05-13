@@ -1,5 +1,5 @@
 "use client"
-import React from 'react'
+import React, { useState } from 'react'
 import Link from 'next/link';
 import Image from 'next/image';
 import { IMG_API } from '@/hooks/getEnv';
@@ -15,6 +15,7 @@ import { CompareIcon, ShopMarketIcon, TimeIcon, TrackOrderIcon, WishlistIcon } f
 const SinglePage = () => {
   const { category, id } = useParams<{ category: string; id: string }>()
   const t = useTranslations('ProductsLang')
+  const [activeTab, setActiveTab] = useState<'specs' | 'comments'>('specs')
   const { data: singleProduct = {}, isLoading: isProductLoading } = getSinglePage(id)
   const { data: variations = {}, isLoading: isVariationsLoading } = getVariation(id)
   const isLoading = isProductLoading || isVariationsLoading
@@ -134,29 +135,54 @@ const SinglePage = () => {
           </div>
         </div>
         <div className='mt-[80px]'>
-          <div className='flex items-center gap-[85px]'>
-            <strong>Telefon xususiyatlar</strong>
+          <div className='flex items-center gap-[85px] cursor-pointer'>
+            <strong className={activeTab === 'specs' ? 'text-black' : 'text-gray-500'} onClick={() => setActiveTab('specs')}>
+              Telefon xususiyatlar
+            </strong>
+            <strong className={activeTab === 'comments' ? 'text-black' : 'text-gray-500'} onClick={() => setActiveTab('comments')}>
+              Comment
+            </strong>
           </div>
-          <div className='w-[45%] mb-[50px]'>
-            {variations?.options?.map((item: any) => (
-              <div key={item.id} className='py-[5px] border-b-[2px] text-[#545D6A] text-[18px] font-mono border-state3400 border-dashed flex justify-between'>
-                <div className='w-[50%]'>{variations.name}</div>
-                <div className='w-[50%]'>{item?.value}</div>
-              </div>
-            ))}
-          </div>
-          <div className='mb-[50px]'>
+
+          {activeTab === 'specs' && (
+            <div className='w-[45%] mb-[50px]'>
+              {variations?.options?.map((item: any) => (
+                <div
+                  key={item.id}
+                  className='py-[5px] border-b-[2px] text-[#545D6A] text-[18px] font-mono border-state3400 border-dashed flex justify-between'
+                >
+                  <div className='w-[50%]'>{item?.name}</div>
+                  <div className='w-[50%]'>{item?.value}</div>
+                </div>
+              ))}
               <div className='py-[5px] text-[#545D6A] text-[18px]'>
                 <h1 className='text-[18px] text-black'>Description</h1>
                 <div className='font-mono'>{singleProduct.description}</div>
               </div>
-          </div>
-          <div className='mb-[50px]'>
               <div className='py-[5px] text-[#545D6A] text-[18px]'>
                 <h1 className='text-[18px] text-black'>Xulosa</h1>
                 <div className='font-mono'>{singleProduct.summary}</div>
               </div>
-          </div>
+            </div>
+          )}
+
+          {activeTab === 'comments' && (
+            <div className='mb-[50px]'>
+              {singleProduct?.comments?.length > 0 ? (
+                singleProduct.comments.map((comment: any) => (
+                  <div key={comment.id} className='mb-4 p-4 border border-gray-200 rounded-lg'>
+                    <span className='mt-5 mb-5'>Users: {comment.user_id}</span>
+                    <p className='text-[16px] font-mono text-[#545D6A]'>{comment.text}</p>
+                    <p className='text-[12px] text-gray-400 mt-1'>
+                      {new Date(comment.createdAt).toLocaleString()}
+                    </p>
+                  </div>
+                ))
+              ) : (
+                <p className='text-[16px] text-gray-500'>No comment</p>
+              )}
+            </div>
+          )}
         </div>
       </div>
       <Products api='/products' title={t('history')} />
