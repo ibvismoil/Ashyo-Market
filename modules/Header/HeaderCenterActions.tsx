@@ -46,7 +46,7 @@ const HeaderCenterActions = () => {
             <HeaderAction actionCounnt={item.actionCounnt} icon={item.icon} />
           </div>
         ) : item.url ? (
-          <div key={item.id} onClick={() => router.push(item.url)} className="cursor-pointer">
+          <div key={item.id} onClick={() => router.push(item.url!)} className="cursor-pointer">
             <HeaderAction actionCounnt={item.actionCounnt} icon={item.icon} />
           </div>
         ) : (
