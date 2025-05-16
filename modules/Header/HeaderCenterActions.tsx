@@ -1,11 +1,11 @@
 "use client"
+import Modal from '@/components/Modal'
+import AuthWrapper from './AuthWrapper'
 import React, { useState } from 'react'
+import { useRouter } from 'next/navigation'
 import HeaderAction from '@/components/HeaderAction'
 import { HeaderActionType } from '@/types/HeaderCenterType'
 import { CompareIcon, LikeIcon, ProfileIcon, ShopIcon } from '@/assets/icons'
-import Modal from '@/components/Modal'
-import { Auth } from './Auth'
-import { useRouter } from 'next/navigation'
 
 const HeaderCenterActions = () => {
   const [openAuth, setOpenAuth] = useState(false)
@@ -56,7 +56,7 @@ const HeaderCenterActions = () => {
 
       {openAuth && (
         <Modal open={openAuth} setOpen={setOpenAuth}>
-          <Auth onClose={() => setOpenAuth(false)} />
+          <AuthWrapper onClose={() => setOpenAuth(false)} />
         </Modal>
       )}
     </div>
