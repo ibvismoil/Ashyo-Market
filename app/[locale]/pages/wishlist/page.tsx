@@ -76,10 +76,10 @@ const WishlistApi = () => {
 
   return (
     <div className="grid containers grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
-      {likedProducts?.length === 0 ? (
+      {likedProducts && likedProducts.length === 0 ? (
         <p className="mt-5 font-medium text-[20px]">Список избранного пуст.</p>
       ) : (
-        likedProducts.map((product) => {
+        likedProducts?.map((product) => {
           const monthlyPayment = Math.ceil(product.price / 12);
           const liked = likedMap[product.id] || false;
           return (
