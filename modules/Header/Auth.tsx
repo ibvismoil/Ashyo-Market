@@ -73,7 +73,7 @@ export function Auth({ onClose }: { onClose: () => void }) {
                 <Input name="password" type="password" placeholder="******" />
               </div>
             </CardContent>
-            <CardFooter className="mb-3">
+            <CardFooter className="mt-3">
               <Button type="submit" className="bg-black text-white">Login</Button>
             </CardFooter>
           </form>
@@ -100,8 +100,8 @@ export function Auth({ onClose }: { onClose: () => void }) {
                 <Input name="password" type="password" placeholder="******" />
               </div>
             </CardContent>
-            <CardFooter>
-              <Button type="submit">Register</Button>
+            <CardFooter className="mt-3">
+              <Button type="submit" className="bg-black text-white">Register</Button>
             </CardFooter>
           </form>
         </Card>
